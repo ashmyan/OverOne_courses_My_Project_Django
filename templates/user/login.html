@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}login{% endblock %}
+{% block content %}
+    <h2 align="center">Login</h2>
+    <div class="col-lg-4 mt 4" style="margin: 0 auto ">
+        <form method="post">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal" align="center">Please sign in</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control mt-3" id="username" name="username" placeholder="Username">
+                <label for="username">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control mt-3" id="password" name="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+            {% for message in messages %}
+                <br>{{ message }}
+            {% endfor %}
+
+            <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Enter</button>
+        </form>
+    </div>
+{% endblock %}

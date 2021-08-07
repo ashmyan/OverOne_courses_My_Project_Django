@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Shop Cart{% endblock %}
+{% block content %}
+    <head>
+        <style>
+            body {
+                background-image: url(../../media/media/images/look.com.ua-27529.jpg);
+                background-repeat: no-repeat;
+
+            }
+        </style>
+    </head>
+    <div class="col-9 mt-5" style="margin: 0 auto">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Название</th>
+                <th scope="col">Котегория</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cart %}
+                <tr>
+
+                    <td>{{ item.products.title }}</td>
+                    <td>{{ item.products.category }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.amount }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th>Total price:</th>
+                <th></th>
+                <th></th>
+                <th>{{ total }}</th>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

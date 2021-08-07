@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Travel{% endblock %}
+{% block content %}
+    <h1 align="center">Travel</h1>
+    <h3 align="center" style="margin-top: 30px">Pick your travel :)</h3>
+    <div class="row">
+        {% for travel in travels %}
+            <div class="col-md-4 wow fadeInDown col-3 mt-5">
+                <ul class="list-marked-2 box-categories-list">
+                    <a href="{% url 'travel_detail' travel.id %}"><img src="{{ travel.image.url }}" width="410"
+                                                                      height="350"></a>
+                    <h2 class="box-categories-title">{{ travel.title }}</h2>
+                    <h3 class="box-categories-title">{{ travel.description|truncatechars:200 }}</h3>
+
+                </ul>
+            </div>
+        {% endfor %}
+
+
+
+
+
+{% endblock %}

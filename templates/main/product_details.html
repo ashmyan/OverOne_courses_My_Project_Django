@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Product{% endblock %}
+{% block content %}
+    <div class="d-flex flex-column mb-3 align-items-center">
+        <h3 class="text-center"><a class="link-dark" href=""
+                                   style="text-decoration: none;">{{ product.title }}</a></h3>
+        <div class="align-self-center p-2 bd-highlight">
+            <a href="{% url 'product_detail' product.id %}"><img style="width: 550px; height: 450px; object-fit: cover; padding-top: 15px; padding-bottom: 15px; margin-left: 30px;" src="{{ product.image.url }}"></a>
+        </div>
+        <p class="w-75 mt-2">Description: {{ product.description }}</p>
+        <p class="w-75 mt-1"><strong>Price: {{ product.price }} BYN</strong></p>
+        <a class="btn btn-success">Buy</a>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Catalog{% endblock %}
+{% block content %}
+    <h1 align="center">Catalog</h1>
+    <h3 align="center" style="margin-top: 30px">Pick categories</h3>
+    <div class="row">
+    {% for category in categories %}
+        <div class="col-md-4 wow fadeInDown col-3">
+            <ul class="list-marked-2 box-categories-list">
+                <a href="{% url 'category_pick' category.id %}"><img src="{{ category.image.url }}" width="368"
+                                 height="420"></a>
+                <h3 class="box-categories-title">{{ category.name }}</h3>
+
+            </ul>
+        </div>
+    {% endfor %}
+
+{% endblock %}
