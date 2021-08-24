@@ -30,8 +30,7 @@
             {% if request.user.is_authenticated %}
                 <i>Hello, <strong>{{ request.user.username }}</strong></i>
                 <a href="{% url 'logout' %}" class="btn btn-danger" style="margin-left: 10px">Logout</a>
-                <a href="{% url 'shop_cart' %}" class="btn btn-warning" style="margin-left: 20px"
-                   rel="nofollow">{{ total }}<span class="cls"> BYN</span></a>
+
             {% else %}
                 <a href="{% url 'user_login' %}" type="button" class="btn btn-outline-primary me-2">Login</a>
                 <a href="{% url 'registration' %}" type="button" class="btn btn-outline-primary me-2">Sign-up</a>

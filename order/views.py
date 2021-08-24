@@ -47,4 +47,3 @@ def shop_cart(request):
 
     return render(request, 'orders/shop_cart.html', {'cart': cart, 'total': total})
 
-
