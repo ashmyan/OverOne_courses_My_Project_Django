@@ -7,8 +7,8 @@
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <style>
         body {
-            background-image: url(../media/look.com.ua-27529.jpg) ;
-            background-repeat: no-repeat;
+            background-image: url(../../media/media/look.com.ua-27529.jpg);
+            background-size: 1950px;
 
         }
     </style>
@@ -28,9 +28,9 @@
 
         <div class="col-md-3 text-end" style="margin-right: 20px">
             {% if request.user.is_authenticated %}
-                <i>Hello, {{ request.user.username }}</i>
-                <a href="{% url 'logout' %}" class="btn btn-outline-danger" style="margin-left: 10px">Logout</a>
-                <a href="{% url 'shop_cart' %}" class="btn btn-outline-warning" style="margin-left: 20px"
+                <i>Hello, <strong>{{ request.user.username }}</strong></i>
+                <a href="{% url 'logout' %}" class="btn btn-danger" style="margin-left: 10px">Logout</a>
+                <a href="{% url 'shop_cart' %}" class="btn btn-warning" style="margin-left: 20px"
                    rel="nofollow">{{ total }}<span class="cls"> BYN</span></a>
             {% else %}
                 <a href="{% url 'user_login' %}" type="button" class="btn btn-outline-primary me-2">Login</a>

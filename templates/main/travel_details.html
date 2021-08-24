@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}Travel{% endblock %}
 {% block content %}
+<head>
+        <style>
+            body {
+                background: #f8ffb3;
+
+            }
+        </style>
+</head>
     <div class="d-flex flex-column mb-3 align-items-center">
         <h3 class="text-center"><a class="link-dark" href="{{ traveling.url }}"
                                    style="text-decoration: none;">{{ traveling.title }}</a></h3>
