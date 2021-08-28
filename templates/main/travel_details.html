@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% block title %}Travel{% endblock %}
 {% block content %}
-<head>
+    <head>
         <style>
             body {
-                background: #f8ffb3;
+                background: #a1dbff;
 
             }
         </style>
-</head>
+    </head>
     <div class="d-flex flex-column mb-3 align-items-center">
-        <h3 class="text-center"><a class="link-dark" href="{{ traveling.url }}"
-                                   style="text-decoration: none;">{{ traveling.title }}</a></h3>
+        <div class="text_style">{{ traveling.title }}</div>
         <div class="align-self-center p-2 bd-highlight">
-            <a href="{{ traveling.url }}"><img style="width: 550px; height: 450px; object-fit: cover; padding-top: 15px; padding-bottom: 15px; margin-left: 30px;" src="{{ traveling.image.url }}"></a>
+            <a href="{{ traveling.url }}"><img
+                    style="width: 550px; height: 450px; object-fit: cover; padding-top: 15px; padding-bottom: 15px; margin-left: 30px;"
+                    src="{{ traveling.image.url }}"></a>
         </div>
-        <p class="w-75 mt-2">Description: {{ traveling.description }}</p>
+        <div class="text_style">{{ traveling.description }}</div>
+        <style>
+            .text_style {
+                background-color: aliceblue; /* Changing background color */
+                font-weight: bold; /* Making font bold */
+                border-radius: 20px; /* Making border radius */
+                width: auto; /* Making auto-sizable width */
+                height: auto; /* Making auto-sizable height */
+                padding: 10px 30px 10px 30px; /* Making space around letters */
+                font-size: 24px; /* Changing font size */
+            }
+        </style>
 
 
 {% endblock %}

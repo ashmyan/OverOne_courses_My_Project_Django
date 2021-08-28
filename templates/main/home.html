@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<head>
-    <style>
-        body {
-            background-image: url(../../media/media/look.com.ua-27529.jpg);
-            background-size: 1950px;
+    <head>
+        <style>
+            body {
+                background-image: url(../../media/media/look.com.ua-27529.jpg);
+                background-size: 1950px;
 
-        }
-    </style>
-</head>
+            }
+        </style>
+        <div class="text_style">Sales Cash Invoice</div>
+        <style>
+            .text_style {
+                background-color: gray; /* Changing background color */
+                font-weight: bold; /* Making font bold */
+                border-radius: 20px; /* Making border radius */
+                width: auto; /* Making auto-sizable width */
+                height: auto; /* Making auto-sizable height */
+                padding: 5px 30px 5px 30px; /* Making space around letters */
+                font-size: 18px; /* Changing font size */
+            }
+        </style>
+    </head>
     </body>
     </html>
 {% endblock %}

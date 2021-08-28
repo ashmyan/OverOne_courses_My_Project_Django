@@ -2,15 +2,38 @@
 {% load static %}
 {% block title %}Catalog{% endblock %}
 {% block content %}
-    <h1 align="center">Catalog</h1>
-    <h3 align="center" style="margin-top: 30px">Pick categories</h3>
-    <div class="row">
+    <div class="text2_style" align="center">Select a category</div>
+    <style>
+        .text2_style {
+            background-color: #ffecde; /* Changing background color */
+            font-weight: bold; /* Making font bold */
+            border-radius: 20px; /* Making border radius */
+            width: auto; /* Making auto-sizable width */
+            height: auto; /* Making auto-sizable height */
+            padding: 5px 30px 5px 30px; /* Making space around letters */
+            font-size: 32px; /* Changing font size */
+            color: rgba(17,11,41,0.62);
+        }
+    </style>
+    <div class="row" style="margin-top: 50px">
     {% for category in categories %}
         <div class="col-md-4 wow fadeInDown col-3">
             <ul class="list-marked-2 box-categories-list">
                 <a href="{% url 'category_pick' category.id %}"><img src="{{ category.image.url }}" width="368"
-                                 height="420"></a>
-                <h3 class="box-categories-title">{{ category.name }}</h3>
+                                                                     height="420"></a>
+                <h3 align="center" class="text_style">{{ category.name }}</h3>
+                <style>
+                    .text_style {
+                        background-color: #ffecde; /* Changing background color */
+                        font-weight: bold; /* Making font bold */
+                        border-radius: 20px; /* Making border radius */
+                        width: 95%; /* Making auto-sizable width */
+                        height: auto; /* Making auto-sizable height */
+                        padding: 5px 25px 5px 25px; /* Making space around letters */
+                        font-size: 30px; /* Changing font size */
+                        color: dimgray;
+                    }
+                </style>
 
             </ul>
         </div>

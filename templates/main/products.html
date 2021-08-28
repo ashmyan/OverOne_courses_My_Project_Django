@@ -1,32 +1,101 @@
 {% extends 'base.html' %}
 {% block title %}Products{% endblock %}
 {% block content %}
-<head>
+    <head xmlns="http://www.w3.org/1999/html">
         <style>
             body {
                 background: #8dc5ff;
 
             }
         </style>
-</head>
+    </head>
     <div class="col-11" style="margin: auto 0">
-        <h2 align="center">Pick product: </h2>
-        <div class="container mt-5 w-75">
+        <p align="center" class="text1_style">Select product</p>
+        <style>
+            .text1_style {
+                background-color: #ffecde; /* Changing background color */
+                font-weight: bold; /* Making font bold */
+                border-radius: 20px; /* Making border radius */
+                width: auto; /* Making auto-sizable width */
+                height: auto; /* Making auto-sizable height */
+                padding: 5px 30px 5px 30px; /* Making space around letters */
+                font-size: 30px; /* Changing font size */
+                color: dimgray;
+            }
+        </style>
+        <div class="text3_style">
             {% for product in products %}
                 <div class="d-flex flex-column mb-3 align-items-center">
-                    <h3 class="text-center"><a class="link-dark" href=""
-                                               style="text-decoration: none;">{{ product.title }}</a></h3>
+                    <p class="text2_style" style="font-size: 28px; color: dimgrey ;">{{ product.title }}</p>
+                    <style>
+                        .text3_style {
+                            background-color: aliceblue; /* Changing background color */
+                            font-weight: bold; /* Making font bold */
+                            border-radius: 20px; /* Making border radius */
+                            width: auto; /* Making auto-sizable width */
+                            height: auto; /* Making auto-sizable height */
+                            padding: 5px 30px 5px 30px; /* Making space around letters */
+                            font-size: 20px; /* Changing font size */
+                        }
+                    </style>
                     <div class="align-self-center p-2 bd-highlight">
                         <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image.url }}"></a>
                     </div>
                     <p class="w-75 mt-2">Description: {{ product.description }}</p>
                     <p class="w-75 mt-1"><strong>Price: {{ product.price }} BYN</strong></p>
-                    <a class="btn btn-success" href="{% url 'add_to_shop_cart' product.id %}">Buy</a>
+                    <a class="button_1" href="{% url 'add_to_shop_cart' product.id %}">Buy</a>
+                    <style>
+                        .button_1 {
+                            position: relative;
+                            display: inline-block;
+                            font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+                            font-size: 1.5em;
+                            font-weight: 700;
+                            color: rgb(245, 245, 245);
+                            text-shadow: 0 -1px rgba(0, 0, 0, .1);
+                            text-decoration: none;
+                            user-select: none;
+                            padding: .3em 1em;
+                            outline: none;
+                            border: none;
+                            border-radius: 3px;
+                            background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
+                            box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
+                            -webkit-animation: pulsate 1.2s linear infinite;
+                            animation: pulsate 1.2s linear infinite;
+                        }
+
+                        input.button_1:hover {
+                            -webkit-animation-play-state: paused;
+                            animation-play-state: paused;
+                            cursor: pointer;
+                        }
+
+                        input.button_1:active {
+                            top: 1px;
+                            color: #fff;
+                            text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+                            box-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 1px #fff, inset 0 1px 2px rgba(0, 0, 0, .8), inset 0 -1px 0 rgba(0, 0, 0, .05);
+                        }
+
+                        @-webkit-keyframes pulsate {
+                            50% {
+                                color: #fff;
+                                text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+                            }
+                        }
+
+                        @keyframes pulsate {
+                            50% {
+                                color: #fff;
+                                text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+                            }
+                        }
+                    </style>
                 </div>
                 <hr class="own-hr">
             {% endfor %}
         </div>
     </div>
 {% endblock %}
-
 

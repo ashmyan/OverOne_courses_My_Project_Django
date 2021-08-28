@@ -1,24 +1,47 @@
 {% extends 'base.html' %}
 {% block title %}Travel{% endblock %}
 {% block content %}
-<head>
+    <head>
         <style>
             body {
-                background: #f8ffb3;
+                background: #a1dbff;
 
             }
         </style>
-</head>
-    <h1 align="center">Travel</h1>
-    <h3 align="center" style="margin-top: 30px">Pick your travel :)</h3>
+    </head>
+    <p align="center" class="text_style1">Choose a holiday camp</p>
+       <style>
+                        .text_style1 {
+                            background-color: #ffecde; /* Changing background color */
+                            font-weight: bold; /* Making font bold */
+                            border-radius: 20px; /* Making border radius */
+                            width: auto; /* Making auto-sizable width */
+                            height: auto; /* Making auto-sizable height */
+                            padding: 5px 30px 5px 30px; /* Making space around letters */
+                            font-size: 26px; /* Changing font size */
+                            color: dimgray;
+                        }
+                    </style>
     <div class="row">
         {% for travel in travels %}
             <div class="col-md-4 wow fadeInDown col-3 mt-5">
                 <ul class="list-marked-2 box-categories-list">
                     <a href="{% url 'travel_detail' travel.id %}"><img src="{{ travel.image.url }}" width="410"
-                                                                      height="350"></a>
-                    <h2 class="box-categories-title">{{ travel.title }}</h2>
-                    <h3 class="box-categories-title">{{ travel.description|truncatechars:200 }}</h3>
+                                                                       height="350"></a>
+                    <h2 class="text_style">{{ travel.title }}</h2>
+                    <div class="text_style">{{ travel.description|truncatechars:200 }}</div>
+                    <style>
+                        .text_style {
+                            background-color: aliceblue; /* Changing background color */
+                            font-weight: bold; /* Making font bold */
+                            border-radius: 20px; /* Making border radius */
+                            width: auto; /* Making auto-sizable width */
+                            height: auto; /* Making auto-sizable height */
+                            padding: 5px 30px 5px 30px; /* Making space around letters */
+                            font-size: 20px; /* Changing font size */
+                        }
+                    </style>
+                    <hr class="own-hr">
 
                 </ul>
             </div>
